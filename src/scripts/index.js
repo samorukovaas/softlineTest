@@ -15,8 +15,8 @@ $(function() {
 
 
 $(".card-selected").mouseleave(function(){
-  $(".card-selected .card__label").css({'color': '#e62e7a', 'transition-delay' : '0.7s'});
+  $(".card__label").css({'color': '#e62e7a', 'transition-delay' : '0.7s'});
 });
 $(".card-selected").mouseover(function(){
-  $(".card-selected .card__label").css({'color': '#666666'});
+  $(".card__label").css({'color': '#666666'});
 });
