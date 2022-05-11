@@ -1,0 +1,21 @@
+
+
+@font-face {
+  font-family: 'Trebuchet MS Regular';
+  src: url('/public/fonts/TrebuchetMS.eot');
+  src: url('/public/fonts/TrebuchetMS.eot?#iefix') format('embedded-opentype'),
+    url('/public/fonts/TrebuchetMS.woff') format('woff'),
+    url('/public/fonts/TrebuchetMS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: 400;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS Bold';
+  src: url('/public/fonts/TrebuchetMS-Bold.eot');
+  src: url('/public/fonts/TrebuchetMS-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/public/fonts/TrebuchetMS-Bold.woff') format('woff'),
+    url('/public/fonts/TrebuchetMS-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: 700;
+}

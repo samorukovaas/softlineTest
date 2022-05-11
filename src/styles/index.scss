@@ -1,0 +1,241 @@
+@import 'reset-css';
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+@import './fonts.scss';
+@import './variables.scss';
+@import './breakpoints.scss';
+
+
+body {
+  font-family: 'Trebuchet MS Regular';
+  font-weight: 400;
+}
+
+.section {
+  background: url(../img/bg.png) $black;
+  padding: 45px 0 65px;
+  min-height: 100vh;
+  height: 100%;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__block {
+    max-width: 30%;
+    width: 100%;
+    margin-bottom: 50px;
+
+    @include md {
+      max-width: 50%;
+    }
+
+    @include sm {
+      max-width: 100%;
+    }
+
+    &:first-child {
+      @include md {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__card {
+    @include md {
+      margin: 0 auto;
+    }
+  }
+}
+
+h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 36px;
+  color: $white;
+  text-align: center;
+}
+
+.container {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include md {
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 480px;
+  background: url(../img/cardDefault.svg) no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+
+
+  &:hover {
+    background: url(../img/cardDefaultHover.svg) no-repeat;
+
+
+    .card__weight {
+      background-color: $blueHover;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    background: url(../img/cat.png) no-repeat;
+    height: 270px;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    border-radius: 10px;
+  }
+
+
+  &__info {
+    padding-top: 20px;
+  }
+
+  &__label {
+    color: $gray;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &__title {
+    font-family: 'Trebuchet MS Bold';
+    font-size: 48px;
+    line-height: 120%;
+    color: $black;
+    margin-bottom: 15px;
+
+    &-small {
+      font-size: 24px;
+      line-height: 120%;
+      display: block;
+    }
+  }
+
+  &__action {
+    color: $gray;
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  &__weight {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 42px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 13px;
+    right: 20px;
+    cursor: pointer;
+    background: $blue;
+    z-index: 100;
+
+    &-small {
+      font-size: 21px;
+      line-height: 120%;
+    }
+  }
+
+  &__description {
+    color: $white;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 17px;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+
+
+    &-selected,
+    &-disabled {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    border-bottom: 1px dashed $blue;
+    color: $blue;
+    font-family: 'Trebuchet MS Bold';
+  }
+
+
+  &-selected {
+    background: url(../img/cardSelected.svg) no-repeat;
+    background-size: contain;
+
+    &:hover {
+      background: url(../img/cardSelectedHover.svg) no-repeat;
+
+      .card__weight {
+        background-color: $pinkHover;
+      }
+    }
+
+    .card__weight {
+      background-color: $pink;
+    }
+
+    .card__description {
+      display: none;
+
+      &-selected {
+        display: block;
+      }
+    }
+  }
+
+  &-disabled {
+    background: url(../img/cardDisabled.svg) no-repeat;
+    background-size: contain;
+
+    &:hover {
+      background: url(../img/cardDisabled.svg) no-repeat;
+
+      .card__weight {
+        background-color: $disabled;
+      }
+    }
+
+    &::after {
+      opacity: 0.5;
+    }
+
+    .card__info {
+      opacity: 0.2;
+    }
+
+    .card__weight {
+      background-color: $disabled;
+    }
+
+    .card__description {
+      display: none;
+
+      &-disabled {
+        display: block;
+        color: $yellow;
+      }
+    }
+  }
+}
